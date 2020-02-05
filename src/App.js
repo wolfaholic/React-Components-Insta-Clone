@@ -8,13 +8,11 @@ import CommentSection from "./components/CommentSection/CommentSectionContainer"
 
 
 const App = () => {
-  const [data, setData] = useState(dummyData);
+  const [data] = useState(dummyData);
   return (
     <div className="App">
       <SearchBar />
       <PostsPage newdata={data} />
-      
-      
     </div>
     
   );
