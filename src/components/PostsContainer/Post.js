@@ -1,37 +1,25 @@
-// You will add code in this file
+import React from 'react';
 
-import React from "react";
-import CommentSection from "../CommentSection/CommentSectionContainer";
-import LikeSection from "./LikeSection";
-import PostHeader from "./PostHeader";
-
-import "./Posts.css";
-
-const Post = props => {
-  // set up state for the likes
-
+const LikeSection = props => {
+  console.log("debug1",props)
   return (
-    <div className="post-border">
-      <PostHeader
-        username={props.post.username}
-        thumbnailUrl={
-          props.post.thumbnailUrl
-        }
-      />
-      <div className="post-image-wrapper">
-        <img
-          alt="post thumbnail"
-          className="post-image"
-          src={props.post.imageUrl}
-        />
+    <div>
+    <div
+      className="like-section"
+      key="likes-icons-container"
+    >
+      <div className="like-section-wrapper">
+        <i className="far fa-heart" onClick={props.addLikes}/>
       </div>
-      <LikeSection />
-      <CommentSection
-        postId={props.post.imageUrl}
-        comments={props.post.comments}
-      />
+      <div className="like-section-wrapper">
+        <i className="far fa-comment" />
+      </div>
     </div>
-  );
+    <p className="like-number">
+      
+      likes{props.newLikes}</p> 
+</div>
+  )
 };
 
-export default Post;
+export default LikeSection;
